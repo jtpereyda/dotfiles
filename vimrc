@@ -66,4 +66,4 @@ imap qq <Esc> " Map qq to Escape key in insert mode (handy for ssh on Android)
 
 " Default colorscheme:
 " molokai needs .vim/colors/molokai.vim from https://github.com/tomasr/molokai
-" colorscheme molokai
+colorscheme molokai
