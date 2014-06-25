@@ -1,0 +1,12 @@
+[ui]
+username=root
+merge = vimdiff
+
+[extensions]
+guestrepo=
+shelve=
+record=
+hgext.extdiff=
+
+[extdiff]
+cmd.vimdiff=
