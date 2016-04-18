@@ -37,6 +37,9 @@ set backspace=2       " Allows for intuitive backspacing.  Set by default on
 " This line sets cindent for C or C++ file types, including *.h files
 autocmd FileType c,cpp set cindent
 
+" markdown format association.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Jump to the last position when opening a file a second time
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
