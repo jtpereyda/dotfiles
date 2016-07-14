@@ -13,12 +13,12 @@ files="bashrc hgrc gitconfig vimrc vim zshrc oh-my-zsh private scrotwm.conf Xres
 ##########
 
 # create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
+echo -n "Creating \"$olddir\" for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir
 echo "done"
 
 # change to the dotfiles directory
-echo -n "Changing to the $dir directory ..."
+echo -n "Changing directory to \"$dir\"..."
 cd $dir
 echo "done"
 
