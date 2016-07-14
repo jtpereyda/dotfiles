@@ -6,9 +6,8 @@
 
 ########## Variables
 
-dotfiles_dir=~/dotfiles
+dotfiles_dir=~/dotfiles/dotfiles
 backup_dir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc hgrc gitconfig vimrc vim zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -21,13 +20,13 @@ cd $dotfiles_dir
 echo "done"
 
 echo "Deploying dotfile symlinks. Moving existing files to $backup_dir. ..."
-for file in $files; do
-    if [ -f $dotfiles_dir/$file ]; then
-        echo "$file"
-        if [ -f ~/.$file ]; then
-            mv -b ~/.$file ~/dotfiles_old/
-        fi
-        ln -s $dotfiles_dir/$file ~/.$file
+for file in $dotfiles_dir/*; do
+    file_basename=$(basename $file)
+    dotfile_dest=~/.$file_basename
+    echo "$file_basename"
+    if [ -f $dotfile_dest ]; then
+        mv -b $dotfile_dest ~/dotfiles_old/
     fi
+    ln -s $file $dotfile_dest
 done
 echo "done"
