@@ -23,11 +23,13 @@ cd $dir
 echo "done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-echo "Replacing existing dotfiles with symlinks. Moving existing files to $olddir. ..."
+echo "Deploying dotfile symlinks. Moving existing files to $olddir. ..."
 for file in $files; do
-    if [ -f ~/.$file ]; then
-        mv -b ~/.$file ~/dotfiles_old/
+    if [ -f $dir/$file ]; then
         echo "$file"
+        if [ -f ~/.$file ]; then
+            mv -b ~/.$file ~/dotfiles_old/
+        fi
         ln -s $dir/$file ~/.$file
     fi
 done
