@@ -1,12 +1,12 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"	The .vimrc file, located in the home directory, may be thought of as a
+"   The .vimrc file, located in the home directory, may be thought of as a
 " list of commands that run every time you start vim.  For example, the line
 " 'set number' below is equivalent to running the command ':set number' every
 " time you start vim.  This file is typically used to change default settings.
-"	One thing to be aware of is that you may disable many of these options by
+"   One thing to be aware of is that you may disable many of these options by
 " setting a similar variable.  For example, line numbers may be disabled (for
 " one session only) with ':set nonumber'.
-"	This is the .vimrc file I typically use; you may find some of the commands
+"   This is the .vimrc file I typically use; you may find some of the commands
 " useful.  Feel free to put this into your home directory in wormulon.
 "
 " -Joshua Pereyda
@@ -29,7 +29,7 @@ set autoindent        " automatically inserts indentation for new lines
 
 set backspace=2       " Allows for intuitive backspacing.  Set by default on
                       " many systems.
-					  " Try ':set backspace=1'(or 0)... if you dare!
+                      " Try ':set backspace=1'(or 0)... if you dare!
 
 "noremap <esc> :noh<return><esc>
                       " <esc> will now also run :noh, clearing search

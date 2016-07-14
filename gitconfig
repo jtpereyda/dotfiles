@@ -1,8 +1,8 @@
 [user]
-	email = jtpereyda@users.noreply.github.com
+    email = jtpereyda@users.noreply.github.com
     name = Joshua Pereyda
 [push]
-	default = simple
+    default = simple
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
@@ -14,8 +14,8 @@
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 
 [diff]
-        tool = kdiff3
+    tool = kdiff3
 [merge]
-        tool = kdiff3
+    tool = kdiff3
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
