@@ -31,3 +31,4 @@ for file in $files; do
         ln -s $dir/$file ~/.$file
     fi
 done
+echo "done"
