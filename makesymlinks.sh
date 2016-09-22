@@ -15,15 +15,13 @@ echo -n "Creating \"$backup_dir\" for backup of any existing dotfiles in ~ ..."
 mkdir -p $backup_dir
 echo "done"
 
-echo -n "Changing directory to \"$dotfiles_dir\"..."
 cd $dotfiles_dir
-echo "done"
 
 echo "Deploying dotfile symlinks. Moving existing files to $backup_dir. ..."
 for file in $dotfiles_dir/*; do
     file_basename=$(basename $file)
     dotfile_dest=~/.$file_basename
-    echo "$file_basename"
+    echo "    $file_basename"
     if [ -f $dotfile_dest ]; then
         mv -b $dotfile_dest ~/dotfiles_old/
     fi
