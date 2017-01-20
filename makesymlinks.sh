@@ -23,7 +23,7 @@ for file in $dotfiles_dir/*; do
     dotfile_dest=~/.$file_basename
     echo "    $file_basename"
     if [ -f $dotfile_dest ]; then
-        mv -b $dotfile_dest $backup_dir
+        mv --backup=numbered $dotfile_dest $backup_dir
     fi
     ln -s $file $dotfile_dest
 done
