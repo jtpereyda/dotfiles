@@ -72,3 +72,8 @@ imap qq <Esc> " Map qq to Escape key in insert mode (handy for ssh on Android)
 " solarized needs .vim/colors/solarized.vim from
 " https://github.com/altercation/vim-colors-solarized.git
 colorscheme molokai
+
+" Custom Markdown editing commands
+map <C-M>h1 o=============================================================================================================================================================khjlld$
+map <C-M>h2 o-------------------------------------------------------------------------------------------------------------------------------------------------------------khjlld$
+map <C-M>ol @='^yf j^P^'<CR>
