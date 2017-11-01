@@ -1,0 +1,4 @@
+# Pathogen bundles should be git cloned, not included in this repo
+dotfiles/vim/autoload/pathogen.vim
+dotfiles/vim/bundle
+
