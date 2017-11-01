@@ -30,6 +30,7 @@ set autoindent        " automatically inserts indentation for new lines
 set backspace=2       " Allows for intuitive backspacing.  Set by default on
                       " many systems.
                       " Try ':set backspace=1'(or 0)... if you dare!
+set hlsearch          " Highlight searches; use :noh to stop highlights
 
 "noremap <esc> :noh<return><esc>
                       " <esc> will now also run :noh, clearing search
