@@ -1,4 +1,5 @@
 alias ls='ls --color'
+alias grep='grep --color=auto'
 # get local bashrc; used for settings I want only on one computer
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
