@@ -1,9 +1,8 @@
 alias ls='ls --color'
 alias grep='grep --color=auto'
-# get local bashrc; used for settings I want only on one computer
-if [ -f ~/.bashrc_local ]; then
-    source ~/.bashrc_local
-fi
+
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # prompt
 parse_git_branch() {
@@ -33,8 +32,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 # Backup bash history after each command
 # From Patrick Bacon https://spin.atomicobject.com/2016/05/28/log-bash-history/
 mkdir -p ~/.logs
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
+# get local bashrc; used for settings I want only on one computer
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
