@@ -4,7 +4,7 @@ users:
     groups: sudo
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
-    ssh-import-id: gh:jtpereyda
+    ssh-import-id: lp:jtpereyda
 package_upgrade: true
 packages:
   - git
