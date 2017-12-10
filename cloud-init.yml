@@ -12,6 +12,8 @@ packages:
   - tmux
   - wireshark
   - bc
+  - python
+  - python-pip
 runcmd:
   - sudo -H -u jtpereyda git clone https://github.com/jtpereyda/dotfiles.git ~/dotfiles
   - sudo -H -u jtpereyda bash ~/dotfiles/ubuntu-spinup.sh

@@ -1,7 +1,7 @@
 sudo apt update --assume-yes && sudo apt upgrade --assume-yes
 
 # dev tools
-sudo apt install --assume-yes tmux vim wireshark git
+sudo apt install --assume-yes tmux vim wireshark git python python-pip
 
 # bc is needed for a workaround in dotfiles/tmux.conf
 sudo apt install --assume-yes bc
