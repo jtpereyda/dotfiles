@@ -1,4 +1,17 @@
-alias ls='ls --color'
+uname=$(uname)
+platform='unknown'
+if [[ "$uname" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$uname" == 'Darwin' ]]; then
+   platform='osx'
+fi
+
+if [[ $platform == 'osx' ]]; then
+   alias ls='ls -G'
+else
+   alias ls='ls --color=auto'
+fi
+
 alias grep='grep --color=auto'
 
 HISTSIZE=10000
