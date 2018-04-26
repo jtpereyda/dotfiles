@@ -91,3 +91,11 @@ imap <C-H>1 <C-H>1a
 imap <C-H>2 <C-H>2a
 
 execute pathogen#infect()
+
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+
+call SourceIfExists("~/.vimrc_local")
