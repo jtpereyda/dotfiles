@@ -1,3 +1,4 @@
+#!/bin/bash
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
 #sudo apt update --assume-yes && sudo apt upgrade --assume-yes
