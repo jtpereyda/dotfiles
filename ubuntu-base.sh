@@ -9,5 +9,3 @@ sudo apt install --assume-yes curl tmux vim git python python-pip
 
 # bc is needed for a workaround in dotfiles/tmux.conf
 sudo apt install --assume-yes bc
-
-$DIR/install-vim-plugins.sh
