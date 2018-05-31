@@ -13,6 +13,7 @@ else
 fi
 
 alias grep='grep --color=auto'
+alias ip='ip --color'
 
 HISTSIZE=10000
 HISTFILESIZE=10000
