@@ -54,6 +54,7 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:
 # Write out bash history after each command -- nice for tmux
 # From https://unix.stackexchange.com/a/1292/15954
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+export SHELL_SESSION_HISTORY=0  # Needed for OS X to disable built-in fancy history behavior
 
 # get local bashrc; used for settings I want only on one computer
 if [ -f ~/.bashrc_local ]; then
