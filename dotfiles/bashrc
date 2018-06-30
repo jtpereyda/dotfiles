@@ -50,6 +50,7 @@ fi
 # From Patrick Bacon https://spin.atomicobject.com/2016/05/28/log-bash-history/
 mkdir -p ~/.logs
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+export HISTCONTROL=ignoreboth:erasedups  # Easier searching; true history is preserved in ~/.logs
 
 # Write out bash history after each command -- nice for tmux
 # From https://unix.stackexchange.com/a/1292/15954
