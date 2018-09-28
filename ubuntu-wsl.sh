@@ -6,3 +6,5 @@ $DIR/ubuntu-base.sh
 $DIR/makesymlinks.sh --ubuntu-wsl
 
 $DIR/install-vim-plugins.sh
+
+$DIR/install-plugins.sh
