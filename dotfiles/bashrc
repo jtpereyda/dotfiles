@@ -15,6 +15,7 @@ fi
 alias grep='grep --color=auto'
 alias ip='ip --color'
 alias resetmouse='printf '"'"'\e[?1000l'"'"
+alias ll='ls -lah'
 
 HISTSIZE=10000
 HISTFILESIZE=10000
