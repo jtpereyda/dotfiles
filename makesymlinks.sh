@@ -11,8 +11,10 @@
 dotfiles_dir=~/dotfiles/dotfiles
 backup_dir=~/dotfiles_old             # old dotfiles backup directory
 ubuntu_wsl_dir=~/dotfiles/os-specific/ubuntu-wsl/dotfiles
+os_x_dir=~/dotfiles/os-specific/os-x/dotfiles
 
 ##########
+set -x
 
 mkdir -p $backup_dir
 
@@ -39,6 +41,10 @@ while [ $# -gt 0 ]; do
     case "$1" in
         --ubuntu-wsl)
             deploy_dotfiles $ubuntu_wsl_dir
+            shift
+        ;;
+        --os-x)
+            deploy_dotfiles $os_x_dir
             shift
         ;;
     esac

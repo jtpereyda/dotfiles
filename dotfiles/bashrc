@@ -59,6 +59,11 @@ export HISTCONTROL=ignoreboth:erasedups  # Easier searching; true history is pre
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 export SHELL_SESSION_HISTORY=0  # Needed for OS X to disable built-in fancy history behavior
 
+# used for settings I want only on a specific OS
+if [ -f ~/.bashrc_os ]; then
+    source ~/.bashrc_os
+fi
+
 # get local bashrc; used for settings I want only on one computer
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
