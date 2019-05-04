@@ -60,7 +60,7 @@ augroup filetypedetect
 augroup END
 filetype plugin on
 
-imap qq <Esc> " Map qq to Escape key in insert mode (handy for ssh on Android)
+" imap qq <Esc> " Map qq to Escape key in insert mode (handy for ssh on Android)
 
 " Highlhight characters past 80 columns
 "if exists('+colorcolumn')
