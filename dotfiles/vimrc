@@ -90,6 +90,18 @@ nmap <C-M>ul @="^i - \ej^"<CR>
 imap <C-H>1 <C-H>1a
 imap <C-H>2 <C-H>2a
 
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+
 execute pathogen#infect()
 
 function! SourceIfExists(file)
