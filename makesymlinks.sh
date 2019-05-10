@@ -14,7 +14,6 @@ ubuntu_wsl_dir=~/dotfiles/os-specific/ubuntu-wsl/dotfiles
 os_x_dir=~/dotfiles/os-specific/os-x/dotfiles
 
 ##########
-set -x
 
 mkdir -p $backup_dir
 
