@@ -5,7 +5,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
-git clone https://github.com/vim-syntastic/syntastic.git
+git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 git clone https://github.com/vim-pandoc/vim-pandoc.git ~/.vim/bundle/vim-pandoc
 git clone https://github.com/vim-pandoc/vim-pandoc-syntax.git ~/.vim/bundle/vim-pandoc-syntax
 
