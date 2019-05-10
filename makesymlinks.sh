@@ -23,13 +23,46 @@ deploy_dotfiles() {
     echo "Deploying dotfile symlinks from $dotfiles_dir. Moving existing files to $backup_dir. ..."
     cd $dotfiles_dir
     for file in $dotfiles_dir/*; do
-        local file_basename=$(basename $file)
-        local dotfile_dest=~/.$file_basename
+        local file_basename="$(basename $file)"
+        local dotfile_dest=~/."$file_basename"
         echo "    $file_basename"
-        if [ -e $dotfile_dest ]; then
-            mv --backup=numbered $dotfile_dest $backup_dir
+        # if dest is a file, back it up
+        if [ -f "$dotfile_dest" ]; then
+            mv --backup=numbered "$dotfile_dest" "$backup_dir"
         fi
-        ln -s $file $dotfile_dest
+        # if dotfile is a directory, recurse
+        if [ -d "$file" ]; then
+            echo "INFO: Recursing into $file $dotfile_dest $backup_dir/$file_basename"
+            deploy_files "$file" "$dotfile_dest" "$backup_dir/$file_basename"
+        else
+            ln -s "$file" "$dotfile_dest"
+        fi
+    done
+    echo "done"
+}
+
+deploy_files() {
+    local source_dir="$1"
+    local dest_dir="$2"
+    local back_dir="$3"
+    mkdir -p "$dest_dir"
+    mkdir -p "$back_dir"
+
+    for file in $source_dir/*; do
+        local file_basename="$(basename $file)"
+        local dotfile_dest="$dest_dir/$file_basename"
+        echo "    $dotfile_dest"
+        # if dest is a file, back it up
+        if [ -f "$dotfile_dest" ]; then
+            mv --backup=numbered "$dotfile_dest" "$back_dir"
+        fi
+        # if dotfile is a directory, recurse
+        if [ -d "$file" ]; then
+            echo "INFO: Recursing into $file $dotfile_dest $back_dir/$file_basename"
+            deploy_files "$file" "$dotfile_dest" "$back_dir/$file_basename"
+        else
+            ln -s "$file" "$dotfile_dest"
+        fi
     done
     echo "done"
 }
