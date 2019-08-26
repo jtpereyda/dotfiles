@@ -37,7 +37,13 @@ prompt_last_exit_code() {
     fi
 
 }
-export PS1="\$(prompt_last_exit_code)\001\033[1;36m\002\u\001\033[0m\002\001\033[36m\002@\h\001\033[0m\002 \001\033[32m\002[\w]\001\033[0m\002\001\033[33m\002\$(parse_git_branch)\001\033[00m\002\n\001\033[1;33m\002> \001\033[0m\002"
+user_host_if_remote() {
+    # Return formatted user@hostname followed by space if in a remote session
+    if [[ $SESSION_TYPE == remote* ]]; then
+        printf "\001\033[1;36m\002$(whoami)\001\033[0m\002\001\033[36m\002$(hostname)\001\033[0m\002 "
+    fi
+}
+export PS1="\$(prompt_last_exit_code)\$(user_host_if_remote)\001\033[32m\002[\w]\001\033[0m\002\001\033[33m\002\$(parse_git_branch)\001\033[00m\002\n\001\033[1;33m\002> \001\033[0m\002"
 
 # Bash auto-completion
 if ! shopt -oq posix; then
