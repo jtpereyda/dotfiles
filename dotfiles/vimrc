@@ -11,6 +11,17 @@
 "
 " -Joshua Pereyda
 """""""""""""""""""""""""""""""""""""""
+
+" From https://github.com/vim/vim/issues/3608
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+set termguicolors
+
 syntax on             " syntax highlighting
 set number            " line numbers
 set ruler             " Show cursor position on bottom right of screen
@@ -73,6 +84,7 @@ filetype plugin on
 " molokai needs .vim/colors/molokai.vim from https://github.com/tomasr/molokai
 " solarized needs .vim/colors/solarized.vim from
 " https://github.com/altercation/vim-colors-solarized.git
+" colorscheme solarized8_high
 colorscheme molokai
 
 " Custom Markdown editing commands
