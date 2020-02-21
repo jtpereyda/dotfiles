@@ -88,10 +88,11 @@ filetype plugin on
 colorscheme molokai
 
 " Custom Markdown editing commands
+" I've stopped using headings since I use #, ##, etc. for headings
 "   'Ctrl+H 1' to insert level 1 heading equal to length of current line
-nmap <C-H>1 o=============================================================================================================================================================khjlld$
+" nmap <C-H>1 o=============================================================================================================================================================khjlld$
 "   'Ctrl+H 2' to insert level 1 heading equal to length of current line
-nmap <C-H>2 o-------------------------------------------------------------------------------------------------------------------------------------------------------------khjlld$
+" nmap <C-H>2 o-------------------------------------------------------------------------------------------------------------------------------------------------------------khjlld$
 "   'Ctrl+M ol' to continue a numbered list for as many lines as quantified,
 "   e.g. '5 Ctrl+M ol' to continue for next 5 lines. List must be started
 "   already.
@@ -99,8 +100,14 @@ nmap <C-M>ol @='^yf j^P^'<CR>
 "   'Ctrl+M ul' to make lines into unordered list. Quantifier may be used.
 nmap <C-M>ul @="^i - \ej^"<CR>
 "   Insert mode 'Ctrl+H 1' to insert level 1 heading, etc.
-imap <C-H>1 <C-H>1a
-imap <C-H>2 <C-H>2a
+" imap <C-H>1 <C-H>1a
+" imap <C-H>2 <C-H>2a
+
+" Easier split/vsplit nav https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Syntastic settings
 set statusline+=%#warningmsg#
