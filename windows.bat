@@ -3,5 +3,4 @@ winget install git
 winget install googlechrome
 winget install keepass
 winget install dropbox
-winget install notepadplusplus
-winget install onenote
+winget install notepad++
