@@ -4,3 +4,5 @@ winget install googlechrome
 winget install keepass
 winget install dropbox
 winget install notepad++
+winget install python
+winget install SumatraPDF
