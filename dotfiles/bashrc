@@ -12,6 +12,7 @@ else
    alias ls='ls --color=auto'
 fi
 
+alias clippy="xsel --clipboard"
 alias grep='grep --color=auto'
 alias ip='ip --color'
 alias resetmouse='printf '"'"'\e[?1000l'"'"
