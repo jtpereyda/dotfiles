@@ -23,8 +23,11 @@
 
 [diff]
     tool = kdiff3
+	algorithm = histogram
 [merge]
     tool = kdiff3
 [core]
     excludesfile = ~/.gitignore
     editor = vim
+[pull]
+	rebase = true
