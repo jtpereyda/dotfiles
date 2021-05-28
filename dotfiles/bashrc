@@ -17,9 +17,11 @@ alias grep='grep --color=auto'
 alias ip='ip --color'
 alias resetmouse='printf '"'"'\e[?1000l'"'"
 alias ll='ls -lah'
+# https://unix.stackexchange.com/questions/159253/decoding-url-encoding-percent-encoding
+alias urldecode='sed "s@+@ @g;s@%@\\\\x@g" | xargs -0 printf "%b"'
 
-HISTSIZE=10000
-HISTFILESIZE=10000
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # prompt
 parse_git_branch() {
