@@ -30,7 +30,10 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+# bindsym $mod+Shift+Return exec gnome-terminal --working-directory="`xcwd`"
+# bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
+bindsym $mod+Return exec gnome-terminal  # doesn't work https://github.com/schischi/xcwd/issues/14
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -91,6 +94,7 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -211,3 +215,13 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
 # OSX-like area selection screenshots
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+
+# Background Desktop Wallpaper Image
+# To change default picture, e.g.: feh --no-fehbg --bg-fill ~/Pictures/hax.png
+exec --no-startup-id sh ~/.fehbg
+
+exec --no-startup-id notify-send "DUNST_COMMAND_PAUSE"
+
+# status bar applets
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
