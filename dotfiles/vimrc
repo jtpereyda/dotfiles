@@ -85,7 +85,7 @@ filetype plugin on
 " solarized needs .vim/colors/solarized.vim from
 " https://github.com/altercation/vim-colors-solarized.git
 " colorscheme solarized8_high
-colorscheme molokai
+" colorscheme molokai
 
 " Custom Markdown editing commands
 " I've stopped using headings since I use #, ##, etc. for headings
