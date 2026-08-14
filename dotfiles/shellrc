@@ -1,0 +1,48 @@
+# Interactive settings shared by Bash and Zsh.
+# Keep shell-specific prompts, history, completion, and key bindings out of this file.
+
+alias g='git'
+alias ll='ls -lah'
+alias grep='grep --color=auto'
+alias resetmouse='printf '"'"'\e[?1000l'"'"
+
+# Decode URL-encoded text read from standard input.
+urldecode() {
+    local encoded
+    encoded=$(sed 's@+@ @g; s@%@\\x@g')
+    printf '%b' "$encoded"
+}
+
+platform='unknown'
+case "$(uname -s)" in
+    Darwin)
+        platform='osx'
+        alias ls='ls -G'
+        alias clippy='pbcopy'
+
+        # Keep the Mac awake with the lid closed on battery.
+        alias lid-awake='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1; echo "Lid sleep DISABLED (battery). Remember: run lid-sleep before putting the laptop in a bag!"'
+        alias lid-sleep='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0; echo "Lid sleep re-enabled (battery)."'
+
+        node_bin='/opt/homebrew/opt/node@22/bin'
+        if [ -d "$node_bin" ]; then
+            case ":$PATH:" in
+                *":$node_bin:"*) ;;
+                *) PATH="$node_bin:$PATH" ;;
+            esac
+            export PATH
+        fi
+        unset node_bin
+        ;;
+    Linux)
+        platform='linux'
+        alias ls='ls --color=auto'
+
+        if command -v xsel >/dev/null 2>&1; then
+            alias clippy='xsel --clipboard'
+        fi
+        if command -v ip >/dev/null 2>&1; then
+            alias ip='ip --color'
+        fi
+        ;;
+esac
